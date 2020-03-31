@@ -1,6 +1,6 @@
 const ipfsClient = require('ipfs-http-client')
 const { CID } = ipfsClient;
-const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
+const ipfs = ipfsClient(process.env.IPFS_PROVIDER)
 
 const addData = async (data) => {
   for await (const file of ipfs.add(data)) {

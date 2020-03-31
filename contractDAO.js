@@ -27,8 +27,8 @@ const addCid = async (cid) => {
   return sendTx(tx);
 }
 
-const getCids = async () => {
-  return instance.methods.getCids().call();
+const getCid = async (index) => {
+  return instance.methods.cids(index).call();
 }
 
-module.exports = { addCid, getCids };
+module.exports = { addCid, getCid };
