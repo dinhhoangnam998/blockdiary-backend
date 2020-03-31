@@ -28,6 +28,8 @@ const main = async () => {
     diary.cid = cid;
     diary.transactionHash = receipt.transactionHash;
     diary.blockHash = receipt.blockHash;
+    diary.status = true;
+    diary.timestamp = new Date();
     const result = await clt.insertOne(diary);
     res.json(diary);
   })
