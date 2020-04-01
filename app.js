@@ -3,8 +3,8 @@ const express = require("express")
 const cors = require('cors')
 const path = require('path')
 
-const ipfsDao = require('./ipfsdao');
-const contractDao = require('./contractdao');
+const ipfsDao = require(path.join(__dirname, 'ipfsdao'));
+const contractDao = require(path.join(__dirname, 'contractdao'));
 
 const app = express()
 app.use(express.json())
