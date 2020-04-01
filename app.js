@@ -1,6 +1,4 @@
-// const MongoClient = require("mongodb").MongoClient;
 import MongoClient from "mongodb"
-import { response } from "express";
 const express = require("express")
 const cors = require('cors')
 
@@ -40,7 +38,7 @@ const main = async () => {
     res.json(diary);
   })
 
-  app.listen(process.env.PORT, () => console.log('app running on port ' + process.env.PORT))
+  app.listen(process.env.PORT)
 }
 
 main();

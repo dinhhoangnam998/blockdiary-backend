@@ -1,10 +1,10 @@
 import Web3 from 'web3'
 const MyBlockDiary = require("./MyBlockDiary.json");
 
+const provider = process.env.WEB3_PROVIDER;
 const publicKey = process.env.PUBLIC_KEY;
 const privateKey = process.env.PRIVATE_KEY;
 const contractAddress = process.env.CONTRACT_ADDRESS;
-const provider = process.env.WEB3_PROVIDER;
 
 const web3 = new Web3(provider);
 web3.eth.accounts.wallet.add(privateKey);
