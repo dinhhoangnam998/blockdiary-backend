@@ -10,7 +10,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const fillDiary = (receipt, diary) => {
+const fillDiary = (receipt, diary, cid) => {
   diary.blockNumber = receipt.blockNumber;
   diary.cid = cid;
   diary.transactionHash = receipt.transactionHash;
@@ -34,7 +34,7 @@ const main = async () => {
     const diary = req.body;
     const cid = await ipfsDao.addData(JSON.stringify(diary));
     const receipt = await contractDao.addCid(cid);
-    fillDiary(receipt, diary);
+    fillDiary(receipt, diary, cid);
     const result = await clt.insertOne(diary);
     res.json(diary);
   })
