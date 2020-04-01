@@ -2,8 +2,8 @@ import MongoClient from "mongodb"
 const express = require("express")
 const cors = require('cors')
 
-const ipfsDao = require('./ipfsdao')
-const contractDao = require('./contractdao')
+const ipfsDao = require('./ipfsdao.js')
+const contractDao = require('./contractdao.js')
 
 
 const app = express()
