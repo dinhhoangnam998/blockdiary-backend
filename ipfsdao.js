@@ -1,6 +1,6 @@
 const ipfsClient = require('ipfs-http-client')
 const { CID } = ipfsClient;
-const ipfs = ipfsClient(process.env.IPFS_PROVIDER)
+const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
 
 const addData = async (data) => {
   for await (const file of ipfs.add(data)) {
@@ -16,4 +16,4 @@ const catData = async (cid) => {
   return Buffer.concat(chunk).toString();
 }
 
-module.exports = {addData, catData};
+module.exports = { addData, catData };
